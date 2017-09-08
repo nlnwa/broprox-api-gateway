@@ -1,0 +1,26 @@
+{
+  "name": "proxy",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node server.js",
+    "devstart": "nodemon server.js",
+    "lint": "eslint ."
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.4",
+    "dotenv": "latest",
+    "express": "latest",
+    "grpc": "latest",
+    "morgan": "^1.8.2",
+    "rethinkdbdash": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-es2015": "^1.1.0",
+    "eslint-config-google": "^0.9.1",
+    "nodemon": "^1.12.0"
+  }
+}
