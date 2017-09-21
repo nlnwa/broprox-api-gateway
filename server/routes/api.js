@@ -88,8 +88,12 @@ router.get(
   '/crawlhostgroupconfig', crawlhostgroupconfig.listCrawlHostGroupConfigs);
 router.post(
   '/crawlhostgroupconfig', crawlhostgroupconfig.saveCrawlHostGroupConfig);
+router.get(
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.getCrawlHostGroupConfig);
+router.put(
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.updateCrawlHostGroupConfig);
 router.delete(
-  'crawlhostgroupconfig/:id', crawlhostgroupconfig.deleteCrawlHostGroupConfig);
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.deleteCrawlHostGroupConfig);
 
 /** Schedule */
 router.get('/schedule', schedule.listSchedule);
