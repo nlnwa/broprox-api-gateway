@@ -11,23 +11,24 @@ import "google/protobuf/empty.proto";
 
 // Service for communicating with harvester.
 service Harvester {
-    // harvest a page
-    rpc HarvestPage (HarvestPageRequest) returns (HarvestPageReply) {
-    }
-    rpc CleanupExecution (CleanupExecutionRequest) returns (google.protobuf.Empty) {
-    }
+    // Harvest a page
+    rpc HarvestPage (HarvestPageRequest) returns (HarvestPageReply) {}
+
+    // Request cleanup of caches after all pages for a seed are harvested.
+    rpc CleanupExecution (CleanupExecutionRequest) returns (google.protobuf.Empty) {}
 }
 
-// A request telling which page to harves.
+// A request telling which page to harvest.
 message HarvestPageRequest {
-    string execution_id = 1;
-    QueuedUri queued_uri = 2;
-    CrawlConfig crawl_config = 3;
+    QueuedUri queued_uri = 1;
+    CrawlConfig crawl_config = 2;
 }
 
 message HarvestPageReply {
     // The outlinks found in the harvested page
     repeated QueuedUri outlinks = 1;
+    int32 uri_count = 2;
+    int64 bytes_downloaded = 3;
 }
 
 message CleanupExecutionRequest {

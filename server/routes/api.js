@@ -6,6 +6,7 @@ const entities = require('../controllers/entities');
 const browserscripts = require('../controllers/browserscript');
 const browserconfigs = require('../controllers/browserconfig');
 const crawlconfigs = require('../controllers/crawlconfig');
+const crawlhostgroupconfig = require('../controllers/crawlhostgroupconfig');
 const crawljobs = require('../controllers/crawljob');
 const schedule = require('../controllers/schedule');
 const politenessconfig = require('../controllers/politenessconfig');
@@ -47,12 +48,12 @@ router.put('/entities/:id', entities.updateCrawlEntities);
 router.delete('/entities/:id', entities.deleteCrawlEntities);
 
 /** Users
-router.get('/users', users.listUser);
-router.post('/users', users.postUser);
-router.get('/users/:id', users.getUser);
-router.put('/users/:id', users.putUser);
-router.delete('/users/:id', users.deleteUser);
-*/
+ router.get('/users', users.listUser);
+ router.post('/users', users.postUser);
+ router.get('/users/:id', users.getUser);
+ router.put('/users/:id', users.putUser);
+ router.delete('/users/:id', users.deleteUser);
+ */
 
 /** Browserconfig */
 router.get('/browserconfig', browserconfigs.listBrowserConfig);
@@ -81,6 +82,18 @@ router.post('/crawlconfig', crawlconfigs.saveCrawlConfig);
 router.get('/crawlconfig/:id', crawlconfigs.getCrawlConfig);
 router.put('/crawlconfig/:id', crawlconfigs.updateCrawlConfig);
 router.delete('/crawlconfig/:id', crawlconfigs.deleteCrawlConfig);
+
+/** CrawlHostGroupconfig */
+router.get(
+  '/crawlhostgroupconfig', crawlhostgroupconfig.listCrawlHostGroupConfigs);
+router.post(
+  '/crawlhostgroupconfig', crawlhostgroupconfig.saveCrawlHostGroupConfig);
+router.get(
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.getCrawlHostGroupConfig);
+router.put(
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.updateCrawlHostGroupConfig);
+router.delete(
+  '/crawlhostgroupconfig/:id', crawlhostgroupconfig.deleteCrawlHostGroupConfig);
 
 /** Schedule */
 router.get('/schedule', schedule.listSchedule);
