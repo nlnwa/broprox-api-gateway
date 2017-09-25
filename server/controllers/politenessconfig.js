@@ -58,18 +58,19 @@ exports.deletePolitenessConfig = (req, res) => {
 
 exports.getrobotsconfig = (req, res) => {
   res.status(200).json({
-      'menuitem': [{
+    'menuitem': [
+      {
         'id': '1',
         'itemName': 'OBEY_ROBOTS',
       },
-        {
-          'id': '2',
-          'itemName': 'IGNORE_ROBOTS',
-        },
-        {
-          'id': '3',
-          'itemName': 'CUSTOM_ROBOTS',
-        },
-      ],
+      {
+        'id': '2',
+        'itemName': 'IGNORE_ROBOTS',
+      },
+      {
+        'id': '3',
+        'itemName': 'CUSTOM_ROBOTS',
+      },
+    ],
   });
 };
