@@ -7,15 +7,13 @@ exports.listCrawlHostGroupConfigs = (req, res) => {
       console.log('CrawlHostGroupconfig: ' + err);
       res.status(500);
     } else {
-      console.log('RES' +res)
       res.status(200).json(response);
     }
   });
 };
 
 exports.getCrawlHostGroupConfig = (req, res) => {
-  client.listCrawlHostGroupConfigs({
-    id: req.params.id}, function(err, response) {
+  client.listCrawlHostGroupConfigs({id: req.params.id}, function(err, response) {
     if (err) {
       console.log('Crawlhostgroupconfig: ' + err);
       res.status(500);
@@ -49,9 +47,7 @@ exports.updateCrawlHostGroupConfig = (req, res) => {
 };
 
 exports.deleteCrawlHostGroupConfig = (req, res) => {
-  console.log(req.params.id);
-  client.deleteCrawlHostGroupConfig({id: req.params.id},
-    function(err, response) {
+  client.deleteCrawlHostGroupConfig({id: req.params.id}, function(err, response) {
     if (err) {
       console.log('Crawlhostgroupconfig ' + err);
       res.status(405).json(err);
