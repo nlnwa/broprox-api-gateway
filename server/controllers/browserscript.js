@@ -39,8 +39,7 @@ exports.updateBrowserScript = (req, res) => {
       console.log('BrowserScript: ' + err);
       res.status(500);
     } else {
-      console.log('updateBrowserScript Not implemented');
-      res.sendStatus(500);
+      res.status(200).json(response);
     }
   });
 };
