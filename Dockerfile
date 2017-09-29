@@ -16,4 +16,4 @@ ENV GRPC_CONTROLLER host:port
 
 EXPOSE 3010
 
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
