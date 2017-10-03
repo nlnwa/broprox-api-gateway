@@ -12,7 +12,7 @@ RUN yarn install --production && yarn cache clean
 
 COPY . /usr/src/app/
 
-ENV GRPC_CONTROLLER host:port
+ENV GRPC_CONTROLLER=host:port LOG_LEVEL=error
 
 EXPOSE 3010
 
