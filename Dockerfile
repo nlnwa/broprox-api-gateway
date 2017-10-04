@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:8-slim
 
 MAINTAINER Norks Nettarkiv <nettarkivet@nb.no>
 
@@ -12,7 +12,7 @@ RUN yarn install --production && yarn cache clean
 
 COPY . /usr/src/app/
 
-ENV GRPC_CONTROLLER=host:port LOG_LEVEL=error
+ENV NODE_ENV=production GRPC_CONTROLLER=host:port LOG_LEVEL=info
 
 EXPOSE 3010
 
