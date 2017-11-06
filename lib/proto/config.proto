@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package broprox;
-option java_package = "no.nb.nna.broprox.model";
-//option java_multiple_files = true;
+package veidemann.api;
+option go_package = "veidemann_api";
+option java_package = "no.nb.nna.veidemann.api";
 option java_outer_classname = "ConfigProto";
 
 import "google/protobuf/timestamp.proto";
@@ -177,4 +177,26 @@ message LogLevels {
         Level level = 2;
     }
     repeated LogLevel log_level = 1;
+}
+
+enum Role {
+    // Any authenticated user
+    ANY_USER = 0;
+    // Any user including unauthenticated users
+    ANY = 1;
+    // Administrator
+    ADMIN = 2;
+    // Curator
+    CURATOR = 3;
+    // A user with permission to read internal data
+    READONLY = 4;
+}
+
+message RoleMapping {
+    string id = 1;
+    oneof email_or_group {
+        string email = 2;
+        string group = 3;
+    }
+    repeated Role role = 4;
 }
