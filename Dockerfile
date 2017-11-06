@@ -1,13 +1,11 @@
-FROM node:8-slim
+FROM node:8-alpine
 
-MAINTAINER Norks Nettarkiv <nettarkivet@nb.no>
+LABEL maintainer="nettarkivet@nb.no"
 
 RUN mkdir -p /usr/src/app
-
 WORKDIR /usr/src/app
 
 COPY package.json yarn.lock /usr/src/app/
-
 RUN yarn install --production && yarn cache clean
 
 COPY . /usr/src/app/
